@@ -5,17 +5,21 @@
     </head>
     <body>
     <form action="" method="POST">
-    {% csrf_token %}
-    Task: <input type="text" name="title"/><br/>
-    Content: <br/>
-    <textarea cols="35" rows="8" name="content">
-    </textarea><br/>
-    <input type="submit" value="Post"/>
+        {% csrf_token %}
+            Task: <input type="text" name="title"/><br/>
+            Content: <br/>
+        <textarea cols="35" rows="8" name="content">
+        </textarea><br/>
+        <input type="submit" value="Post"/>
     </form>
         <ul>
             {% for task in tasks %}
                 <li>{{ task }}</li>
             {% endfor %}
         </ul>
+    <form action="clear", method="GET">
+        {% csrf_token %}
+        <button name="clear_btn" onclick="location.href'{% url "clear" %}">Clear Tasks</button>
+    </form>
     </body>
 </html>
