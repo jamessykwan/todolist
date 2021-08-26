@@ -1,0 +1,5 @@
+
+*.pyc
+env/Scripts/autopep8.exe
+env/Scripts/pycodestyle.exe
+*.rst

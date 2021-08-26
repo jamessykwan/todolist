@@ -4,6 +4,14 @@
         <title>To-Do List</title>
     </head>
     <body>
+    <form action="" method="POST">
+    {% csrf_token %}
+    Task: <input type="text" name="title"/><br/>
+    Content: <br/>
+    <textarea cols="35" rows="8" name="content">
+    </textarea><br/>
+    <input type="submit" value="Post"/>
+    </form>
         <ul>
             {% for task in tasks %}
                 <li>{{ task }}</li>
