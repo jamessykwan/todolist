@@ -88,6 +88,13 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.custom-control-label::before, 
+.custom-control-label::after {
+    top: .8rem;
+    width: 2rem;
+    height: 2rem;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
