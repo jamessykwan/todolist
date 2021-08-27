@@ -7,14 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'todo/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'todo/css/styles.css' %}">
 </head>
 <html>
     <header class="site-header">
-        <nav class="navbar navbar-dark navbar-expand-md bs-gray-dark">
             <div class="container">
-                <div class="navbar">
+                <div class="navbar bs-gray-dark">
                     <a class="brand" href="#">Title</a>
                     <ul class="nav">
                     <li class="active"><a href="#">Home</a></li>
@@ -23,6 +21,10 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-    </header
+            <div class="container">
+                <div class="col-md-8">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+    </header>
 </html>
