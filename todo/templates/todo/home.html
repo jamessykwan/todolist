@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>To-Do List</title>
-    </head>
-    <body>
-        <ul>
-            {% for task in tasks %}
-                <li>{{ task }}</li>
-            {% endfor %}
-        </ul>
-    <form action="clear", method="GET">
-        {% csrf_token %}
-        <button name="clear_btn" onclick="location.href'{% url "clear" %}">Clear Tasks</button>
-    </form>
+{% extends 'todo/base.html' %}
+<title>To-Do List</title>
+<body>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+    <button type="button">
+        <a href="{% url 'clear' %}">Clear Tasks</a>
+    </button>
 
-     <button type="button">
+    <button type="button">
         <a href="{% url 'addTask' %}">Add Task</a>
     </button>
-    
-    </body>
-</html>
+
+</body>

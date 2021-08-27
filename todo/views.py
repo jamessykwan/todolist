@@ -29,6 +29,4 @@ def add_task(task_name, task_content):
 
 def clear_tasks(request):
     Task.objects.all().delete()
-    return render(request, "todo/home.html", {
-        "tasks": tasks
-    })
+    return redirect('home')
