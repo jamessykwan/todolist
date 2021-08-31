@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>To-Do List</title>
-    </head>
-    <body>
+{% extends 'todo/base.html' %}
+{% block content %}
+<head>
+    <title>To-Do List - Add Task</title>
+</head>
+<body>
+<div class="container form-select-lg">
     <form action="" method="POST">
         {% csrf_token %}
             Task: <input type="text" name="title"/><br/>
             Content: <br/>
         <textarea cols="35" rows="8" name="content">
         </textarea><br/>
-        <input type="submit" onclick="location.href'{% url "clear" %}" value="Post"/>
+        <input type="submit" value="Post"/>
     </form>
-    </body>
-</html>
+</div>
+</body>
+{% endblock %}
