@@ -5,16 +5,21 @@
   {% for task in tasks %}
     {% if not task.completed %}
         <tr>
-            <div class="custom-control form-control-lg custom-checkbox">
-            <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-            />
-            <label class="custom-control-label" for="flexCheckDefault"> {{task}} {{task.completed}} </label>
-            </div>
+          <div class="custom-control form-control-lg custom-checkbox">
+            <form action="" method="POST">
+              {% csrf_token %}
+              <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  {% if tag.published %}checked{% endif %}
+                  id="flexCheckDefault"
+              />
+              <label class="custom-control-label" for="flexCheckDefault"> {{task}} {{task.completed}} </label>
+            </form>
+          </div>
         </tr>
+        
     {% endif %}
   {% endfor %}
   Completed
